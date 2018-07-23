@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14135" systemVersion="17G65" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="MapRect" representedClassName="MapRect" syncable="YES">
+        <attribute name="height" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="originX" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="originY" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="width" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+    </entity>
+    <entity name="Partner" representedClassName="Partner" syncable="YES">
+        <attribute name="accountType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="depositionDuration" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="descr" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="externalPartnerId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="hasLocations" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isMomentary" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="limitations" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="picture" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pointType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="toPoints" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="PartnerPoint" inverseName="toPartner" inverseEntity="PartnerPoint" syncable="YES"/>
+    </entity>
+    <entity name="PartnerPoint" representedClassName="PartnerPoint" syncable="YES">
+        <attribute name="externalId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fullAddress" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="latitude" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="Decimal" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="partnerName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="workHours" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="toPartner" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Partner" inverseName="toPoints" inverseEntity="Partner" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="MapRect" positionX="0" positionY="144" width="128" height="105"/>
+        <element name="Partner" positionX="-9" positionY="36" width="128" height="240"/>
+        <element name="PartnerPoint" positionX="-9" positionY="36" width="128" height="150"/>
+    </elements>
+</model>
